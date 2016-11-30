@@ -33,6 +33,8 @@ alias d='dirs -v'
 alias v='vim '
 alias pacman='sudo pacman '
 alias x='xclip'
+alias p='python3'
+alias p2='python2'
 
 alias t='tmux'
 alias tl='tmux ls'
