@@ -86,3 +86,4 @@ fi
 export VISUAL="vim"
 #ctl s frwd search und nicht block console 
 stty -ixon
+export PATH=$PATH:/opt/messengerfordesktop
