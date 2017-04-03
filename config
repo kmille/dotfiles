@@ -192,6 +192,7 @@ bindsym $mod+Pause mode "$mode_system"
 
 #start chromium
 bindsym $mod+i exec chromium
+bindsym $mod+o exec firefox
 
 #start terminal with tmux
 bindsym $mod+t exec thunar
@@ -212,3 +213,5 @@ exec gajim
 #move window to next output
 bindsym $mod+n move container to output left
 
+setxkbmap -variant ''
+setxkbmap -variant nodeadkeys
