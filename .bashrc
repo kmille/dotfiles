@@ -92,6 +92,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias l='less'
     alias io='iotop --only'
     alias c='curl'
+    alias g='git'
 #    alias ssh='ssh -X'
 #    alias ssh='mosh'
 fi

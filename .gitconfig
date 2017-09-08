@@ -1,0 +1,7 @@
+[user]
+	name = kmille
+	email = christian.schneider@androidloves.me
+[alias]
+    s = status
+	l = log
+	c = commit -a -m
