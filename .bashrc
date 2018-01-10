@@ -95,6 +95,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias g='git'
     alias ..='cd ..'
     alias ...='cd ../..'
+    alias ip='ip -c'
 #    alias ssh='ssh -X'
 #    alias ssh='mosh'
 fi

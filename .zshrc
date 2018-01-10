@@ -38,6 +38,7 @@ alias p='python3'
 alias p2='python2'
 alias i='ipython'
 alias g='git'
+alias ip='ip -c'
 
 alias t='tmux'
 alias tl='tmux ls'
