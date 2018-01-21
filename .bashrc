@@ -74,30 +74,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -laSh --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-    alias p='ping '
-    alias pi='ping -c 4 87.106.23.90'
-    alias p6='ping6 '
-    alias h='htop '
-    alias t='top'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias whoiswho='whoami'
-    alias trace='traceroute'
-    alias m='more'
-    alias ns='netstat -tulpn'
-    alias l='less'
-    alias io='iotop --only'
-    alias c='curl'
-    alias g='git'
-    alias ..='cd ..'
-    alias ...='cd ../..'
-    alias ip='ip -c'
-#    alias ssh='ssh -X'
-#    alias ssh='mosh'
 fi
 
 # colored GCC warnings and errors
