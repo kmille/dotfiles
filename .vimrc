@@ -21,14 +21,7 @@ nnoremap <C-K> kdd
 "backspace geht tab zur_ck
 set softtabstop=4 expandtab
 
-"set ttyfast
-"set mouse=a
-"set ttymouse=xterm2
-"colorscheme elflord
+"switch tabs with L and H
+nnoremap H gT
+nnoremap L gt
 
-"set guifont=Monaco\ 12
-"set guifont=Menlo-Regular\ 12
-
-
-"set encoding=utf-8
-"set fileencoding=utf-8
