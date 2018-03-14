@@ -22,6 +22,13 @@ nnoremap <C-K> kdd
 set softtabstop=4 expandtab
 
 "switch tabs with L and H
+
+" splitting tabs
+nnoremap te :tabedit<Space>
 nnoremap H gT
 nnoremap L gt
 
+" windows
+nnoremap vs :vsplit<Space>
+nnoremap s :split<Space>
+map <Tab> <C-W>w
