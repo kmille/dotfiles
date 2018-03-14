@@ -32,3 +32,6 @@ nnoremap L gt
 nnoremap vs :vsplit<Space>
 nnoremap s :split<Space>
 map <Tab> <C-W>w
+
+" tmux + vim = <3
+nnoremap redo :w<CR> :! tmux send-keys -t bottom C-p C-m<CR><CR>
