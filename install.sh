@@ -10,3 +10,4 @@ mv gitconfig /etc/gitconfig
 #mv zshrc ~/.zshrc
 #mv i3status.conf ~/.i3status.conf
 #mv config ~/.config/i3/config
+#mv Xdefaults ~/.Xdefaults
