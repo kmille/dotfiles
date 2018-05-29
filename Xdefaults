@@ -25,6 +25,8 @@ URxvt.matcher.button: 1
 
 ! activate keyboard-select with Alt+ESC
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
 
 ! yank urls
 URxvt.perl-ext: default,url-select
