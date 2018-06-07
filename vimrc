@@ -18,20 +18,39 @@ noremap K <nop>
 nnoremap <C-J> I<CR><Esc>
 nnoremap <C-K> kdd
 
-"backspace geht tab zur_ck
-set softtabstop=4 expandtab
-
-"switch tabs with L and H
-
-" splitting tabs
-nnoremap te :tabedit<Space>
+"tab switching 
 nnoremap H gT
 nnoremap L gt
 
-" windows
-nnoremap vs :vsplit<Space>
-nnoremap s :split<Space>
+"backspace geht tab zur_ck
+set softtabstop=4 expandtab
+
+"set ttyfast
+"set mouse=a
+"set ttymouse=xterm2
+
+colorscheme elflord
+"set guifont=Monaco\ 12
+"set guifont=Menlo-Regular\ 12
+
+
+"set encoding=utf-8
+"set fileencoding=utf-8
+
+nnoremap redo :w<CR> :! tmux send-keys -t bottom C-p C-m<CR><CR>
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/syntastic'
+Plug 'ervandew/supertab'
+call plug#end()
+
+" settings for syntastic
+"let g:syntastic_quiet_messages = { "level": "warnings" }
+let g:syntastic_quiet_messages = {  'regex': 'docstring' }
+let g:syntastic_check_on_wq = 0
+nnoremap cs :SyntasticCheck<CR>
+nnoremap se :Errors<CR>
+nnoremap he :lclose<CR>
+" go to next window with TAB
 map <Tab> <C-W>w
 
-" tmux + vim = <3
-nnoremap redo :w<CR> :! tmux send-keys -t bottom C-p C-m<CR><CR>
