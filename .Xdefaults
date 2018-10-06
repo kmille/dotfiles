@@ -1,0 +1,33 @@
+URxvt.saveLines: 1000
+URxvt.scrollBar: false
+URxvt.foreground: white
+URxvt.background: black
+URxvt.secondaryScroll: true
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt.tabbed.saveLines: 1000
+URxvt.tabbed.scrollBar: false
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.tabbed.secondaryScroll: true
+URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt*inheritPixmap: true 
+URxvt*shading: 70
+
+! click links
+urxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+! activate keyboard-select with Alt+ESC
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+! yank urls
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
