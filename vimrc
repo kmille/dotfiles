@@ -18,6 +18,9 @@ noremap K <nop>
 nnoremap <C-J> I<CR><Esc>
 nnoremap <C-K> kdd
 
+"open filename in new tab
+nnoremap tt <c-w>gf
+
 "tab switching 
 nnoremap H gT
 nnoremap L gt
@@ -46,7 +49,7 @@ call plug#end()
 
 " settings for syntastic
 "let g:syntastic_quiet_messages = { "level": "warnings" }
-let g:syntastic_quiet_messages = {  'regex': 'docstring' }
+let g:syntastic_quiet_messages = {  'regex': ['docstring', 'Line too long', 'invalid variable name']  }
 let g:syntastic_check_on_wq = 0
 nnoremap cs :SyntasticCheck<CR>
 nnoremap se :Errors<CR>
