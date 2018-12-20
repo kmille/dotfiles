@@ -3,8 +3,8 @@
 mv bashrc ~/.bashrc
 mv bash_aliases ~/.bash_aliases
 mv tmux.conf ~/.tmux.conf
-mv vimrc /etc/vim/vimrc
-mv gitconfig /etc/gitconfig
+mv vimrc ~/.vimrc
+mv gitconfig ~/.gitconfig
 
 # clients only
 #mv zshrc ~/.zshrc
