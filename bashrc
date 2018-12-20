@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 # If not running interactively, don't do anything
+export TERM=xterm
 case $- in
     *i*) ;;
       *) return;;
@@ -107,12 +108,10 @@ fi
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-
-if [[ ! $TERM =~ screen ]]; then
-   exec tmux
-fi
-
-
 #disable sleep and enable reverse search
 stty -ixon
 
+if [ -z "$TMUX" ]
+then
+   exec tmux
+fi

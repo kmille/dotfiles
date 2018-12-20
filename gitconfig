@@ -5,3 +5,5 @@
     s = status
     l = log
     c = commit -a -m
+    d = diff
+    ba = branch -a
