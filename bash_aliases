@@ -27,6 +27,7 @@ alias sys='systemctl'
 alias s='sudo'
 alias p='python'
 alias i='ipython'
+alias fd=fdfind
 
 
 #tmux
