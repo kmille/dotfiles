@@ -40,7 +40,7 @@ colorscheme elflord
 "set encoding=utf-8
 "set fileencoding=utf-8
 
-nnoremap redo :w<CR> :! tmux send-keys -t bottom C-p C-m<CR><CR>
+nnoremap rr :w<CR> :! tmux send-keys -t bottom C-l C-p C-m<CR><CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
