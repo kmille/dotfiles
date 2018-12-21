@@ -1,13 +1,13 @@
 #!/bin/sh
 # server
-mv bashrc ~/.bashrc
-mv bash_aliases ~/.bash_aliases
-mv tmux.conf ~/.tmux.conf
-mv vimrc ~/.vimrc
-mv gitconfig ~/.gitconfig
+cp bashrc ~/.bashrc
+cp bash_aliases ~/.bash_aliases
+cp tmux.conf ~/.tmux.conf
+cp vimrc ~/.vimrc
+cp gitconfig ~/.gitconfig
 
 # clients only
-#mv zshrc ~/.zshrc
-#mv i3status.conf ~/.i3status.conf
-#mv config ~/.config/i3/config
-#mv Xdefaults ~/.Xdefaults
+#cp zshrc ~/.zshrc
+#cp i3status.conf ~/.i3status.conf
+#cp config ~/.config/i3/config
+#cp Xdefaults ~/.Xdefaults
