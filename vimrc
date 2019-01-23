@@ -58,6 +58,7 @@ let g:ale_linters = { 'python': ['flake8']}
 let b:ale_fixers = {'python': ['autopep8']}
 let g:syntastic_python_flake8_args='--max-line-length=120'
 "let g:syntastic_python_flake8_args='--max-line-length=120 --ignore=E402,E731,E711,E501'
+nnoremap fe :ALEFix<CR>
 
 
 " settings for vim-gitgutter
@@ -65,7 +66,6 @@ set updatetime=300
 
 " ## end plugins
 
-
 " go to next window with TAB
 map <Tab> <C-W>w
-nnoremap fe :ALEFix<CR>
+nnoremap 1 :Lexplore<CR>
