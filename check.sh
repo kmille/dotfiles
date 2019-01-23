@@ -1,13 +1,24 @@
 #!/bin/sh
 echo "comparing .zshrc"
-colordiff -u ~/.zshrc .zshrc
+git diff -U0 zshrc ~/.zshrc
+read
+
+clear
 echo "comparing .vimrc"
-colordiff -u ~/.vimrc .vimrc
+git diff -U0 vimrc ~/.vimrc
+read
+
+clear
 echo "comparing .bashrc"
-colordiff -u ~/.bashrc .bashrc
+git diff -U0 bashrc ~/.bashrc
+read
+
+clear
 echo "comparing .tmux.conf"
-colordiff -u ~/.tmux.conf .tmux.conf
+git diff -U0 tmux.conf ~/.tmux.conf
+read
+
+clear
 echo "comparing .i3status.conf"
-colordiff -u ~/.i3status.conf .i3status.conf
-echo "comparing ~/.config/i3/config"
-colordiff -u ~/.config/i3/config config
+git diff -U0 i3status.conf ~/.i3status.conf
+read
