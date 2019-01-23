@@ -104,6 +104,15 @@ setopt PUSHD_MINUS
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions.zsh
 
+# begin git branch prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %b '
+setopt PROMPT_SUBST
+PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f${vcs_info_msg_0_}%# '
+# begin git branch prompt
+
+
 if ! pgrep -u $USER ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
@@ -111,7 +120,13 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval $(<~/.ssh-agent-thing) > /dev/null
 fi
 
+# make cursor taste faster
+xset r rate 220 40
+
 export VISUAL="vim"
 #ctl s frwd search und nicht block console 
 stty -ixon
 export PATH=$PATH:/opt/messengerfordesktop
+
+if [ "$TMUX" = "" ]; then exec tmux; fi
+
