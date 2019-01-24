@@ -30,8 +30,8 @@ font pango:monospace 9
 floating_modifier $mod
 
 # start a terminal with tmux
-#bindsym $mod+Return exec i3-sensible-terminal -e tmux
 bindsym $mod+Return exec i3-sensible-terminal 
+bindsym $mod+Shift+Return exec TMUX=1 i3-sensible-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -165,10 +165,11 @@ bar {
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
     } 
-        status_command i3status
+        status_command py3status -c ~/.i3status.conf
 }
 
 #set $Locker i3lock && sleep 1
+#set $Locker /usr/local/bin/lock && sleep 1
 set $Locker /usr/local/bin/lock && sleep 1
 
 bindsym $mod+Shift+u exec $Locker
@@ -193,6 +194,9 @@ bindsym $mod+Pause mode "$mode_system"
 #start chromium
 bindsym $mod+i exec chromium
 bindsym $mod+o exec firefox
+bindsym $mod+b exec blueman-manager
+#bindsym $mod+p exec PULSE_SERVER=gorleben pavucontrol
+bindsym $mod+p exec pavucontrol
 
 #start terminal with tmux
 bindsym $mod+t exec thunar
@@ -201,17 +205,25 @@ bindsym $mod+t exec thunar
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ > /dev/null
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- > /dev/null
-bindsym XF86AudioMute exec amixer -q set Master toggle
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- 
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 10 +5% && pactl set-sink-volume 12 +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 10 -5% && pactl set-sink-volume 12 -5%
+#bindsym XF86AudioMute exec pactl set-sink-mute 10 'toggle' && pactl set-sink-mute 12 'toggle'
+
+bindsym XF86AudioRaiseVolume exec bash ~/.local/increase_volume.sh
+bindsym XF86AudioLowerVolume exec bash ~/.local/decrease_volume.sh
+bindsym XF86AudioMute exec bash ~/.local/toggle_volume.sh
+#bindsym XF86AudioNext exec bash ~/.local/toggle_device.sh
+
+bindsym XF86AudioMicMute exec xdg-screensaver activate
 
 #autostart owncloud and thunderbird
-exec owncloud
+exec nextcloud
 exec thunderbird
-exec gajim
 
 #move window to next output
 bindsym $mod+n move container to output left
 
-setxkbmap -variant ''
-setxkbmap -variant nodeadkeys
