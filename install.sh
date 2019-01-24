@@ -7,6 +7,16 @@ cp gitconfig ~/.gitconfig
 cp bashrc ~/.bashrc
 cp bash_aliases ~/.bash_aliases
 
+## install rg
+wget https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+dpkg -i ripgrep_0.10.0_amd64.deb
+rm ripgrep_0.10.0_amd64.deb
+
+## install fd
+wget https://github.com/sharkdp/fd/releases/download/v7.2.0/fd-musl_7.2.0_amd64.deb
+dpkg -i fd-musl_7.2.0_amd64.deb
+rm fd-musl_7.2.0_amd64.deb
+
 # client
 cp zshrc ~/.zshrc
 cp config ~/.config/i3/config
