@@ -11,6 +11,8 @@ cp bash_aliases ~/.bash_aliases
 cp zshrc ~/.zshrc
 cp config ~/.config/i3/config
 cp i3status.conf ~/.i3status.conf
+mkdir -p ~/.i3/py3status/
+cp vms.py ~/.i3/py3status/vms.py
 #pacman -S py3status
 i3-msg restart
 
