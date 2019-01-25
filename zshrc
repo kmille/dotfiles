@@ -124,9 +124,12 @@ fi
 xset r rate 220 40
 
 export VISUAL="vim"
+
 #ctl s frwd search und nicht block console 
 stty -ixon
-export PATH=$PATH:/opt/messengerfordesktop
+
+# fix Vagrant
+VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
 
 if [ "$TMUX" = "" ]; then exec tmux; fi
 
