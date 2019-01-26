@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 from virtualbox.library import MachineState
 from virtualbox import VirtualBox
+from ipdb import set_trace
 
+set_trace()
 class Py3status:
     format = '{number} vms'
 

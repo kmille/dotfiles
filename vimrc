@@ -62,10 +62,12 @@ nnoremap fe :ALEFix<CR>
 
 
 " settings for vim-gitgutter
-set updatetime=300
+set updatetime=5000
 
 " ## end plugins
 
 " go to next window with TAB
 map <Tab> <C-W>w
 nnoremap 1 :Lexplore<CR>
+nnoremap sp :set paste<CR>
+nnoremap snp :set paste!<CR>
