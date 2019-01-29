@@ -54,7 +54,7 @@ call plug#end()
 
 let g:ale_linters_explicit = 1
 "let g:ale_linters = { 'yaml': ['yamllint']}
-let g:ale_linters = { 'python': ['flake8']}
+let g:ale_linters = { 'python': ['flake8', 'bandit']}
 let b:ale_fixers = {'python': ['autopep8']}
 let g:syntastic_python_flake8_args='--max-line-length=120'
 "let g:syntastic_python_flake8_args='--max-line-length=120 --ignore=E402,E731,E711,E501'
