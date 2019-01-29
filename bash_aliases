@@ -48,3 +48,4 @@ alias od='ssh summer@door.w17.io'
 alias vgaoff="xrandr --output VGA1 --off"
 alias pacman='sudo pacman '
 alias x='xclip'
+alias w='mosh irc-bouncer -- tmux attach-session -t irc'
