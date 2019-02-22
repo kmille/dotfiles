@@ -40,7 +40,7 @@ function install_zsh {
 }
 
 
-if $(which zsh) 
+if command -v zsh > /dev/null
 then
     #do_for_all
     #install_zsh
@@ -49,5 +49,4 @@ else
     #do_for_all
     #install_bash
     echo 2
-
 fi
