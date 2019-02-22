@@ -42,11 +42,10 @@ function install_zsh {
 
 if command -v zsh > /dev/null
 then
-    #do_for_all
-    #install_zsh
+    do_for_all
+    install_zsh
     echo 1
 else
-    #do_for_all
-    #install_bash
-    echo 2
+    do_for_all
+    install_bash
 fi
