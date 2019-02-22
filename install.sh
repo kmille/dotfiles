@@ -29,6 +29,7 @@ function install_bash {
 # client
 function install_zsh {
     cp zshrc ~/.zshrc
+    mkdir -p ~/.config/i3
     cp config ~/.config/i3/config
 
     cp i3status.conf ~/.i3status.conf
@@ -44,7 +45,6 @@ if command -v zsh > /dev/null
 then
     do_for_all
     install_zsh
-    echo 1
 else
     do_for_all
     install_bash
