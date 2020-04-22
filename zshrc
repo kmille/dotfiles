@@ -1,7 +1,13 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+#HISTSIZE=1000
+#SAVEHIST=1000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
+
+
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -15,9 +21,7 @@ compinit
 alias ls='ls -vlah --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-alias p='ping '
-alias pi='ping -c 4 8.8.8.8'
-alias p6='ping6 '
+alias pi='ping 8.8.8.8'
 alias h='htop '
 alias t='tmux'
 alias grep='grep --color=auto'
@@ -67,9 +71,23 @@ alias monleft='xrandr --output LVDS1 --right-of VGA1 --primary --auto  --output 
 alias monoff='xrandr --output LVDS1 --primary --auto  --output VGA1 --off'
 
 alias pg='pgrep -ai'
-alias gor='pactl load-module module-tunnel-sink-new server=gorleben.flokli.de sink_name=gorleben channels=2 rate=44100'
-alias m='ncmpcpp -h whisky.w17.io'
+#alias gor='pactl load-module module-tunnel-sink-new server=172.22.71.198 sink_name=gorleben channels=2 rate=44100'
+alias gor='pactl load-module module-tunnel-sink-new server=192.168.10.60 sink_name=gorleben channels=2 rate=44100'
+alias mb='ncmpcpp -h 192.168.10.60'
+alias mw='ncmpcpp -h $(dig +short lounge.w17.io)'
+alias mk='ncmpcpp -h $(dig +short kitchen.w17.io)'
+alias pa='PULSE_SERVER=192.168.10.60 pavucontrol'
 
+
+
+alias cat='bat -p'
+alias cdp='cd ~/dc1/puppet'
+
+alias vv='source venv/bin/activate'
+alias watch='watch --color'
+
+
+alias zbx='/home/kmille/dc1/Dokumente/projects/jiiiira/venv/bin/python /home/kmille/dc1/Dokumente/projects/jiiiira/zbx.py'
 
 #make ctl+w remove just back to the next slash not the whole line
 autoload -U select-word-style
@@ -128,8 +146,16 @@ export VISUAL="vim"
 #ctl s frwd search und nicht block console 
 stty -ixon
 
+
 # fix Vagrant
 VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
 
-if [ "$TMUX" = "" ]; then exec tmux; fi
+
+export TERM=xterm
+export LS_COLORS="di=01;36"
+
+
+if [ "$RUN_TMUX" = "yes" ] && [ -z "$TMUX" ]; then 
+    exec tmux
+fi
 
