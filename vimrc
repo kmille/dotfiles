@@ -22,6 +22,12 @@ nnoremap <F1> <nop>
 nnoremap <C-J> I<CR><Esc>
 nnoremap <C-K> kdd
 
+"insert breakpoint() into next line
+nnoremap bp obreakpoint()<Esc>
+
+"insert print(f"{}") to next line
+nnoremap db oprint(f"{=}")<Esc>hhhi
+
 "open filename in new tab
 nnoremap tt <c-w>gf
 
@@ -54,10 +60,9 @@ call plug#end()
 
 let g:ale_linters_explicit = 1
 "let g:ale_linters = { 'yaml': ['yamllint']}
-let g:ale_linters = { 'python': ['flake8', 'bandit']}
+let g:ale_linters = { 'python': ['flake8']}
 let b:ale_fixers = {'python': ['autopep8']}
-let g:syntastic_python_flake8_args='--max-line-length=120'
-"let g:syntastic_python_flake8_args='--max-line-length=120 --ignore=E402,E731,E711,E501'
+let g:ale_python_flake8_options='--ignore=E501,E265,E262,E731,E226,E261'
 nnoremap fe :ALEFix<CR>
 
 
@@ -68,6 +73,6 @@ set updatetime=5000
 
 " go to next window with TAB
 map <Tab> <C-W>w
-nnoremap 1 :Lexplore<CR>
 nnoremap sp :set paste<CR>
 nnoremap snp :set paste!<CR>
+
