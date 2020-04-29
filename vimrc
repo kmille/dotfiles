@@ -22,15 +22,6 @@ nnoremap <F1> <nop>
 nnoremap <C-J> I<CR><Esc>
 nnoremap <C-K> kdd
 
-"insert breakpoint() into next line
-nnoremap bp obreakpoint()<Esc>
-
-"insert print(f"{}") to next line
-nnoremap db oprint(f"{=}")<Esc>hhhi
-
-"open filename in new tab
-nnoremap tt <c-w>gf
-
 "tab switching 
 nnoremap H gT
 nnoremap L gt
@@ -46,9 +37,9 @@ colorscheme elflord
 "set guifont=Monaco\ 12
 "set guifont=Menlo-Regular\ 12
 
-"tmux integration
-"clear;arrow up; enter; enter to clear vim :! message
-nnoremap rr :w<CR> :! tmux send-keys -t bottom C-l C-p C-m<CR><CR> 
+
+"open filename in new tab
+nnoremap tt <c-w>gf
 
 " ## begin plugins
 call plug#begin('~/.vim/plugged')
@@ -71,8 +62,39 @@ set updatetime=5000
 
 " ## end plugins
 
+
 " go to next window with TAB
 map <Tab> <C-W>w
 nnoremap sp :set paste<CR>
 nnoremap snp :set paste!<CR>
 
+" The default timeout waiting for another short cut is too long (1000 ms)
+" type faster! wait shorter!
+" http://vimdoc.sourceforge.net/htmldoc/options.html#'timeoutlen'
+set timeoutlen=200
+
+
+"############ BEGIN USING VIM AS IDE ############
+
+"tmux integration
+"clear;arrow up; enter; enter to clear vim :! message
+nnoremap rr :w<CR> :! tmux send-keys -t bottom C-l C-p C-m<CR><CR> 
+
+
+"insert breakpoint() into next line
+nnoremap bp obreakpoint()<Esc>
+
+"insert print(f"") to next line
+nnoremap pf oprint(f"")<Esc>hi
+
+"insert print(f"{}") to next line
+nnoremap pff oprint(f"{=}")<Esc>hhhi
+
+
+
+" mm: make markdown (requires python-markdown)
+nnoremap mm :w<CR> :! python -m  markdown % -f %.html <CR><CR> 
+" mo: markdown open
+nnoremap mo :! chromium %.html >/dev/null 2&1<CR><CR> 
+
+"############ END USING VIM AS IDE ############

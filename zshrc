@@ -85,6 +85,7 @@ alias cdp='cd ~/dc1/puppet'
 
 alias vv='source venv/bin/activate'
 alias watch='watch --color'
+alias rg='rg --no-ignore'
 
 
 alias zbx='/home/kmille/dc1/Dokumente/projects/jiiiira/venv/bin/python /home/kmille/dc1/Dokumente/projects/jiiiira/zbx.py'

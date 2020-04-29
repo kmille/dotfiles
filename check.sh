@@ -1,7 +1,8 @@
 #!/bin/sh
+echo "if in doubt press enter"
 echo "comparing .zshrc"
 git diff -U0 zshrc ~/.zshrc
-read
+read 
 
 clear
 echo "comparing .vimrc"
@@ -16,9 +17,4 @@ read
 clear
 echo "comparing .tmux.conf"
 git diff -U0 tmux.conf ~/.tmux.conf
-read
-
-clear
-echo "comparing .i3status.conf"
-git diff -U0 i3status.conf ~/.i3status.conf
 read

@@ -49,3 +49,7 @@ alias vgaoff="xrandr --output VGA1 --off"
 alias pacman='sudo pacman '
 alias x='xclip'
 alias w='mosh irc-bouncer -- tmux attach-session -t irc'
+
+alias rg='rg --no-ignore'
+alias vv='source venv/bin/activate'
+alias watch='watch --color'

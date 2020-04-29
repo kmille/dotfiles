@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu
+
+which curl > /dev/null || echo "curl is not installed" && exit
+
+curl -s https://github.com/kmille/dotfiles/blob/master/bash_aliases -o ~/.bash_aliases_chs
+curl -s https://github.com/kmille/dotfiles/blob/master/vimrc -o ~/.vimrc
+curl -s https://github.com/kmille/dotfiles/blob/master/tmux.conf -o ~/.vimrc
+
+echo "Done. You're bash_aliases are at ~/.bash_aliases_chs"
