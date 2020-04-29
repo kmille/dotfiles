@@ -5,8 +5,8 @@ set -eux
 # script will fail if it's not installed
 which curl > /dev/null
 
-curl -s https://github.com/kmille/dotfiles/blob/master/bash_aliases -o ~/.bash_aliases_chs
-curl -s https://github.com/kmille/dotfiles/blob/master/vimrc -o ~/.vimrc
-curl -s https://github.com/kmille/dotfiles/blob/master/tmux.conf -o ~/.tmux.conf
+curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/bash_aliases -o ~/.bash_aliases_chs
+curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/vimrc -o ~/.vimrc
+curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/tmux.conf -o ~/.tmux.conf
 
 echo "Done. You're bash_aliases are at ~/.bash_aliases_chs"
