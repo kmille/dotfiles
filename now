@@ -8,5 +8,10 @@ which curl > /dev/null
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/bash_aliases -o ~/.bash_aliases_chs
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/vimrc -o ~/.vimrc
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/tmux.conf -o ~/.tmux.conf
+curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/dircolors.conf -o ~/.dircolors
 
+set +x
+echo "Put this somewhere:"
+echo ". ~/.bash_aliases_chs"
+echo 'test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"'
 echo "Done. You're bash_aliases are at ~/.bash_aliases_chs"
