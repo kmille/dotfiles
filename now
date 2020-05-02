@@ -8,7 +8,7 @@ which curl > /dev/null
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/bash_aliases -o ~/.bash_aliases_chs
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/vimrc -o ~/.vimrc
 curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/tmux.conf -o ~/.tmux.conf
-curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/dircolors.conf -o ~/.dircolors
+curl -s https://raw.githubusercontent.com/kmille/dotfiles/master/dircolors -o ~/.dircolors
 
 set +x
 echo "Put this somewhere:"
