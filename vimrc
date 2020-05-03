@@ -41,26 +41,6 @@ colorscheme elflord
 "open filename in new tab
 nnoremap tt <c-w>gf
 
-" ## begin plugins
-call plug#begin('~/.vim/plugged')
-Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
-call plug#end()
-
-let g:ale_linters_explicit = 1
-"let g:ale_linters = { 'yaml': ['yamllint']}
-let g:ale_linters = { 'python': ['flake8']}
-let b:ale_fixers = {'python': ['autopep8']}
-let g:ale_python_flake8_options='--ignore=E501,E265,E262,E731,E226,E261'
-nnoremap fe :ALEFix<CR>
-
-
-" settings for vim-gitgutter
-set updatetime=5000
-
-" ## end plugins
 
 
 " go to next window with TAB
@@ -93,8 +73,29 @@ nnoremap pff oprint(f"{=}")<Esc>hhhi
 
 
 " mm: make markdown (requires python-markdown)
-nnoremap mm :w<CR> :! python -m  markdown % -f %.html <CR><CR> 
+nnoremap mm :w<CR> :! python -m markdown % -f %.html <CR><CR> 
 " mo: markdown open
 nnoremap mo :! chromium %.html >/dev/null 2&1<CR><CR> 
 
 "############ END USING VIM AS IDE ############
+
+
+" ## begin plugins
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" :PlugInstall
+call plug#begin('~/.vim/plugged')
+Plug 'w0rp/ale'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+call plug#end()
+
+let g:ale_linters_explicit = 1
+"let g:ale_linters = { 'yaml': ['yamllint']}
+let g:ale_linters = { 'python': ['flake8']}
+let b:ale_fixers = {'python': ['autopep8']}
+let g:ale_python_flake8_options='--ignore=E501,E265,E262,E731,E226,E261'
+nnoremap fe :ALEFix<CR>
+" settings for vim-gitgutter
+set updatetime=5000
+" ## end plugins
