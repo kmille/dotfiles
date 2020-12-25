@@ -1,4 +1,3 @@
-"set mouse=a
 syntax on
 set shiftwidth=4
 set tabstop=4
@@ -16,35 +15,37 @@ set linebreak
 map Q :qa<CR>
 map q <Nop>
 nnoremap <F1> <nop>
-"noremap K <nop>
+noremap K <nop>
 
-"Ctl-J new line nach unten
+"Ctl-J move line one line above
 nnoremap <C-J> I<CR><Esc>
 nnoremap <C-K> kdd
 
-"tab switching 
+
+"" BEGIN TAB MAGIC
+set tabpagemax=50
+" color for the tab status line
+hi TabLine ctermfg=LightYellow
+hi TabLineSel ctermfg=LightGreen
+
+"tab navigation
 nnoremap H gT
 nnoremap L gt
 
-"backspace geht tab zur_ck
+"tab reordering with ctrl+h/l
+nnoremap <C-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <C-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+"" END TAB MAGIC
+
+
+"backspace goes back a tab
 set softtabstop=4 expandtab
 
-"set ttyfast
-"set mouse=a
-"set ttymouse=xterm2
-
 colorscheme elflord
-"set guifont=Monaco\ 12
-"set guifont=Menlo-Regular\ 12
-
 
 "open filename in new tab
 nnoremap tt <c-w>gf
 
-
-
-" go to next window with TAB
-map <Tab> <C-W>w
 nnoremap sp :set paste<CR>
 nnoremap snp :set paste!<CR>
 
@@ -60,7 +61,6 @@ set timeoutlen=200
 "clear;arrow up; enter; enter to clear vim :! message
 nnoremap rr :w<CR> :! tmux send-keys -t bottom C-l C-p C-m<CR><CR> 
 
-
 "insert breakpoint() into next line
 nnoremap bp obreakpoint()<Esc>
 
@@ -70,17 +70,10 @@ nnoremap pf oprint(f"")<Esc>hi
 "insert print(f"{}") to next line
 nnoremap pff oprint(f"{=}")<Esc>hhhi
 
-
-
-" mm: make markdown (requires python-markdown)
-nnoremap mm :w<CR> :! python -m markdown % -f %.html <CR><CR> 
-" mo: markdown open
-nnoremap mo :! chromium %.html >/dev/null 2&1<CR><CR> 
-
 "############ END USING VIM AS IDE ############
 
 
-" ## begin plugins
+""" BEGIN plugins
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " :PlugInstall
 call plug#begin('~/.vim/plugged')
@@ -91,11 +84,11 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:ale_linters_explicit = 1
-"let g:ale_linters = { 'yaml': ['yamllint']}
-let g:ale_linters = { 'python': ['flake8']}
+let g:ale_linters = { 'python': ['flake8'], 'puppet': ['puppetlint'], 'yaml': ['yamllint']}
 let b:ale_fixers = {'python': ['autopep8']}
 let g:ale_python_flake8_options='--ignore=E501,E265,E262,E731,E226,E261'
+let g:ale_yaml_yamllint_options='-d "{extends: relaxed, rules: {line-length: disable}}"'
 nnoremap fe :ALEFix<CR>
 " settings for vim-gitgutter
 set updatetime=5000
-" ## end plugins
+""" END plugins

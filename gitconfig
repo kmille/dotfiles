@@ -1,9 +1,13 @@
 [user]
-	name = kmille
-	email = christian.schneider@androidloves.me
+    name = kmille
+    email = github@androidloves.me
 [alias]
     s = status
     l = log
-    c = commit -a -m
+    ls = log --stats
     d = diff
+    ds = diff --stat
+    c = commit -a -m
     ba = branch -a
+[pull]
+    rebase = true

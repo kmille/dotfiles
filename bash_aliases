@@ -31,7 +31,6 @@ alias sys='systemctl'
 alias s='sudo'
 alias p='python'
 alias i='ipython'
-alias fd=fdfind
 
 
 #tmux
@@ -50,6 +49,14 @@ alias pacman='sudo pacman '
 alias x='xclip'
 alias w='mosh irc-bouncer -- tmux attach-session -t irc'
 
-alias rg='rg --no-ignore'
+alias rg='rg --no-ignore --hidden'
+alias fd='fdfind -HIi'
 alias vv='source venv/bin/activate'
 alias watch='watch --color'
+alias bd='base64 -d'
+
+check_cert() {
+    echo "$1 is at $(dig +short $1)"
+    openssl s_client -connect $1:443 < /dev/null 2>/dev/null | openssl x509 -noout -dates -subject -issuer
+}
+
