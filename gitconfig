@@ -11,3 +11,5 @@
     ba = branch -a
 [pull]
     rebase = true
+[init]
+	defaultBranch = main

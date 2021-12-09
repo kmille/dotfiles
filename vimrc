@@ -24,9 +24,6 @@ nnoremap <C-K> kdd
 
 "" BEGIN TAB MAGIC
 set tabpagemax=50
-" color for the tab status line
-hi TabLine ctermfg=LightYellow
-hi TabLineSel ctermfg=LightGreen
 
 "tab navigation
 nnoremap H gT
@@ -78,9 +75,10 @@ nnoremap pff oprint(f"{=}")<Esc>hhhi
 " :PlugInstall
 call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
+"Plug 'ervandew/supertab'
+"Plug 'tpope/vim-commentary'
+"Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 let g:ale_linters_explicit = 1
@@ -92,3 +90,7 @@ nnoremap fe :ALEFix<CR>
 " settings for vim-gitgutter
 set updatetime=5000
 """ END plugins
+
+" color for the tab status line
+hi TabLine ctermfg=LightYellow
+hi TabLineSel ctermfg=LightGreen
