@@ -3,7 +3,9 @@ URxvt.scrollBar: false
 URxvt.foreground: white
 URxvt.background: black
 URxvt.secondaryScroll: true
-URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+!URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+!URxvt*font: xft:Terminus:medium:size=12
+URxvt*font: xft:Terminus:medium:size=10
 URxvt.urlLauncher: chromium
 URxvt.tabbed.saveLines: 1000
 URxvt.tabbed.scrollBar: false
@@ -15,7 +17,7 @@ URxvt.tabbed.secondaryScroll: true
 URxvt*inheritPixmap: true 
 URxvt*shading: 0
 
-urxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
+URxvt.perl-ext-common: default,url-select,resize-font,keyboard-select,-confirm-paste
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
@@ -23,7 +25,6 @@ URxvt.matcher.button: 1
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 ! yank urls
-URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 
 URxvt.url-select.launcher: /usr/bin/xdg-open
@@ -38,3 +39,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !URxvt.keysym.M-c: perl:clipboard:copy
 !URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.urgentOnBell: True
+
+
+! reload file with xrdb ~/.Xdefaults
+
